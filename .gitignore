@@ -5,3 +5,7 @@ publish.properties
 #    Publish Library 	#
 #########################
 build-lib
+
+# 		Built Code 		#
+#########################
+build
