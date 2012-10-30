@@ -1,0 +1,27 @@
+[
+	{
+		navTitle: "About Mark",
+		href : "index.htm",
+		"css": "aboutme"
+	},{
+		navTitle: "Tuition",
+		href : "tuition.htm",
+		"css": "tuition"
+	},{
+		navTitle: "Special Occasions",
+		href : "occasions.htm",
+		"css": "occasions"
+	},{
+		navTitle: "Prices",
+		href : "prices.htm",
+		"css": "prices"
+	},{
+		navTitle: "Music",
+		href : "music.htm",
+		"css": "music"
+	},{
+		navTitle: "Contact Mark",
+		href : "contact.htm",
+		"css": "contact"
+	}
+]

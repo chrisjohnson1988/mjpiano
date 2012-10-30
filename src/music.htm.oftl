@@ -1,0 +1,17 @@
+<#import "_freemarker/template.ftl" as template>
+<#import "_freemarker/youtube.ftl" as youtube>
+
+<#assign title="Music"/>
+<#assign css="music"/>
+<#assign content>
+	<div class="explaination">
+		<h1>Music</h1>
+		<p>Here are some of Mark's own compositions and renditions.</p>
+	</div>
+	<@youtube.musicPlaylist playlistID="PL665BA9936F4006E8"/>
+</#assign>
+<#assign href="music.htm"/>
+
+<@template.page href=href css=css title=title>
+	${content}
+</@template.page>

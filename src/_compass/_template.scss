@@ -1,0 +1,48 @@
+html, body {
+	font-family: arial;
+	font-size: 14px;
+	color: #D8D8D8;
+	background-color: black;
+}
+
+/*100px - 27 of the nav bar. Container will start at the right height*/
+body { margin-top: 73px; }
+
+h1 { font-size: large; }
+
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+h1, #navigation li, #navigation .selected {
+	color: #0E53A7;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+}
+
+a { color:white; }
+
+/*music player*/
+#music-player {
+	position:fixed;
+	bottom:20px;
+	right:0.5em;
+}
+
+/*Social and copyright stuff*/
+#copyright {
+	right: 0;
+	bottom: 0;
+	background-color: black;
+	width: 100%;
+	text-align: right;
+	font-size: x-small;
+	font-weight: bold;
+}
+
+#social, #copyright {
+	padding: 3px;
+	position: fixed;
+	z-index: 2;
+}

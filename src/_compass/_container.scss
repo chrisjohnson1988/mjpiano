@@ -1,0 +1,69 @@
+#container {
+	$backgroundImageHeight : 720px;
+	$backgroundImageWidth : 1180px;
+	$headerHeight: 200px;
+	$contentWidth: 960px;
+
+
+	#header, .section .content {
+		width: $contentWidth;	/*define drawable region*/
+		margin: 0 auto;
+	}
+
+	#header {
+		z-index: 1;
+		position: relative;
+		height: $headerHeight;
+		margin-top: 30px;
+	}
+
+	#logo {
+		width: 302px;
+		height: 125px;
+		background: image-url('logo.png') no-repeat;
+		float:left;
+	}
+
+	position: relative;
+	margin: 0 auto;
+
+
+	&, .section {
+		width: 100%;
+		max-width: $backgroundImageWidth - ($backgroundImageWidth - $contentWidth) / 4; /*width of background images - (width of background images - width of section)/4)*/
+		height: $backgroundImageHeight;
+	}
+
+	.section {
+		position: absolute;
+		top: 0;
+		background: black image-url('backgrounds.jpg') no-repeat;
+		-webkit-background-size: 2360px 2160px; /* Mobile Safari background fix */
+		left: - ($backgroundImageWidth - $contentWidth) / 4; /*(width of background images - width of section)/4)*/
+		padding-left: ($backgroundImageWidth - $contentWidth) / 4; /*(width of background images - width of section)/4)*/
+		
+		.content {
+			position: relative;
+			top: $headerHeight;
+			margin-bottom: 75px; /*margin to match the body and shift up for the logo*/
+			padding: 0 20px;
+			height: $backgroundImageHeight - $headerHeight; /*section - header*/
+			
+			/*Define the decoration image which can exist in a section*/
+			.decoration-image {
+				margin: 1em 50px;
+				float:right;
+				clear:right;
+				border: solid white 3px;
+			}
+		}
+	}
+
+	/*Define background images*/
+	.occasions 	{ background-position: - $backgroundImageWidth 0px;}
+	.tuition	{ background-position: #{- $backgroundImageWidth} #{- $backgroundImageHeight};}
+	.contact 	{ background-position: #{- $backgroundImageWidth} #{- $backgroundImageHeight * 2};}
+	.aboutme 	{ background-position: 0px 0px;}
+	.prices 	{ background-position: 0px #{- $backgroundImageHeight};}
+	.music 		{ background-position: 0px #{- $backgroundImageHeight * 2};}
+}

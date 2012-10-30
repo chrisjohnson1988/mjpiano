@@ -1,0 +1,10 @@
+<#import "_freemarker/template.ftl" as template>
+
+<#assign title="Wedding and Special Occasion Pianist Stockport"/>
+<#assign css="occasions"/>
+<#assign content><@markdown file="_markdown/occasions.htm.markdown"/></#assign>
+<#assign href="occasions.htm"/>
+
+<@template.page href=href css=css title=title>
+	${content}
+</@template.page>

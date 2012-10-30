@@ -1,0 +1,81 @@
+<project name="MJPiano" default="compressed-build" basedir=".">
+
+	<loadproperties srcFile="publish.properties"/>
+	<property name="src" value="src"/>
+	<property name="build.dir" value="build"/>
+	
+	<target name="clean">
+		<echo message="Cleaning the build folder"/>
+		<delete dir="${build.dir}"/> 
+	</target>
+	
+	<target name="build" depends="clean">
+		<echo message="Copying the source to the build folder for processing"/>
+		<copy todir="${build.dir}">		<fileset dir="${src}"/>		</copy>
+		
+		<echo message="Processing the source"/>
+		<taskdef name="process" classname="net.common.build.freemarker.OutputFreeMarkerTask"/>
+		<process>
+			<fileset dir="${build.dir}">
+				<include name="**/*.oftl"/>
+				<exclude name="_*/*"/>
+			</fileset>
+		</process>
+		
+		<echo message="Processing the coffeescript"/>
+		<taskdef name="coffeescript" classname="net.common.build.coffeescript.BulkCoffeeScriptTask"/>
+		<coffeescript>
+			<fileset dir="${build.dir}">
+				<include name="**/*.coffeescript"/>
+				<exclude name="_*/*"/>
+			</fileset>
+		</coffeescript>
+		
+		<echo message="Processing the sass"/>
+		<taskdef name="sass" classname="net.common.build.sass.BulkSassTask"/>
+		<sass>
+			<fileset dir="${build.dir}">
+				<include name="**/*.sass"/>
+				<include name="**/*.scss"/>
+				<exclude name="_*/*"/>
+			</fileset>
+		</sass>
+		
+		<echo message="Compiling the Compass Project"/>
+		<taskdef name="compass" classname="net.common.build.compass.CompassTask"/>
+		<compass in="${build.dir}/_compass"/>
+		
+		<echo message="Removing processed and hidden files"/>
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}">
+				<include name="**/_*"/>
+				<include name="**/_*/"/>
+				<include name="**/*.sass"/>
+				<include name="**/*.scss"/>
+				<include name="**/*.coffeescript"/>
+				<include name="**/*.oftl"/>
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="compressed-build" depends="build">
+		<taskdef name="yui-compress" classname="net.common.build.yuicompressor.BulkYUICompressorTask"/>
+        <echo message="Perfoming YUI Minification (JS)"/>
+        <yui-compress mode="JS">
+			<fileset dir="${build.dir}"> <include name="**/*.js"/> </fileset>
+		</yui-compress>
+        
+		<echo message="Perfoming YUI Minification (CSS)"/>
+        <yui-compress mode="CSS">
+			<fileset dir="${build.dir}"> <include name="**/*.css"/> </fileset>
+		</yui-compress>
+	</target>
+	
+	<target name="deploy" depends="compressed-build">
+		<taskdef name="publish" classname="net.common.build.publish.PublishTask"/>
+        
+        <publish server="${publish.server}" userid="${publish.userid}" password="${publish.password}" cleanout="true">
+            <fileset dir="${build.dir}" casesensitive="no"/>
+        </publish>
+	</target>
+</project>

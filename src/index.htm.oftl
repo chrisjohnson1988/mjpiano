@@ -1,0 +1,14 @@
+<#include "_freemarker/image_tag.ftl">
+<#import "_freemarker/template.ftl" as template>
+
+<#assign title="Wedding Pianist and Tutor Stockport"/>
+<#assign css="aboutme"/>
+<#assign content>
+	<@img src="images/mark-roland.jpg" class="decoration-image"/>
+	<@markdown file="_markdown/index.htm.markdown"/>
+</#assign>
+<#assign href="index.htm"/>
+
+<@template.page href=href css=css title=title>
+	${content}
+</@template.page>

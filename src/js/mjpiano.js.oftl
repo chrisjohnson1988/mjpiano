@@ -1,0 +1,13 @@
+<#include "_hidden/swfobject.js"/>
+<#include "_hidden/jquery/jquery.prettyPhoto.js"/>
+<#include "_hidden/jquery/jquery.replaceWithFade.js"/>
+<#include "_hidden/jquery/jquery.messageBox.js"/>
+<#include "_hidden/jquery/jquery.imageChanger.js"/>
+<#include "_hidden/jquery/jquery.uniqueID.js"/>
+<#include "_hidden/jquery/jquery.marquee.js"/>
+<#include "_hidden/jquery/jquery.ease.js"/>
+<#include "_hidden/jquery/jquery.youtubeMusicPlayer.js"/>
+<#include "_hidden/mjpiano/util/OnloadHelper.js"/>
+<#include "_hidden/mjpiano/onload/music-htm.js"/>
+<#include "_hidden/mjpiano/animation.js.ftl"/>
+<#include "_hidden/googleAnalytics.js"/>

@@ -1,0 +1,65 @@
+/*PRICE PAGE defined styles*/
+#container {
+	.prices .quoteCalculator {
+		width: 460px;
+		padding: 1em;
+		border: solid white 3px;
+		
+		.googleMap {
+			position: absolute;
+			right:0;
+			bottom:0;
+			height:200px;
+			margin:20px;
+			width:250px;
+		}
+		h1 { padding:0; }
+		
+		.label {
+			display:inline-block;
+			width: 300px;
+		}
+		
+		.formRow { margin:0.5em 0; }
+		
+		.ui-messageBox { padding: 0 0.5em; }
+	}
+	
+	
+	/*OCCASIONS PAGE defined styles*/
+	.occasions li {
+		list-style-type: disc;
+		margin-left: 1em;
+	}
+	
+	
+	/*MUSIC PAGE defined styles*/
+	.music {
+		.youtube-music {
+			li a {
+				display: inline-block;
+				background: image-url('Play Button.png') no-repeat;
+				padding: 0.1em 0 0.1em 25px;
+				height:20px;
+				text-decoration:none;
+				
+				&:hover { text-decoration:underline; }
+			}
+		}
+		
+		.youtube-video {
+			a {
+				display: inline-block;
+				text-decoration:none;
+				padding: 4px;
+				.youtube-image-wrapper {
+					display: inline-block;
+					overflow: hidden;
+					height : 66px;
+					img { margin-top: -12px; }
+				}
+				.youtube-title:hover { text-decoration:underline; }
+			}
+		}
+	}
+}

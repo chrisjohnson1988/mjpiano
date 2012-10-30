@@ -1,0 +1,14 @@
+<#include "_freemarker/image_tag.ftl">
+<#import "_freemarker/template.ftl" as template>
+
+<#assign title="Contact Mark"/>
+<#assign css="contact"/>
+<#assign content>
+	<@img src="images/mark-walking.jpg" class="decoration-image"/>
+	<@markdown file="_markdown/contact.htm.markdown"/>
+</#assign>
+<#assign href="contact.htm"/>
+
+<@template.page href=href css=css title=title>
+	${content}
+</@template.page>

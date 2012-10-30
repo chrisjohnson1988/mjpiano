@@ -1,0 +1,52 @@
+@function addListTo($list, $imageNum) {
+    $position:0px;
+    @for $i from 1 through $imageNum {
+      $position: $position + nth($list, $i);             
+    }
+    @return $position - nth($list, $imageNum);
+}
+
+@mixin rounded-top($list, $imageNum) {
+    width:nth($list, $imageNum);
+    .hover			{ background-position: - addListTo($list, $imageNum) 0px;  }
+    .image			{ background-position: - addListTo($list, $imageNum) 25px; }
+    .selected-image	{ background-position: - addListTo($list, $imageNum) 50px; }
+}
+
+#navigation {
+    overflow:hidden;
+	background: image-url('music score.png') repeat;
+	float:left;
+	width: 658px;
+	height: 125px;
+	
+    li {
+        float:left;
+        position :relative;
+        height:25px;
+		margin-right:20px;
+		margin-top: 64px;
+		
+        span {
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background-image: image-url('navigation.png');
+			text-indent:-9999px; /*Hide the original text*/
+        }
+
+        .hover { opacity:0; }
+    }
+    
+	$imageWidths: 99px 63px 132px 49px 49px 111px;
+	
+    li.aboutme		{ @include rounded-top($imageWidths, 1); }
+    li.tuition 		{ @include rounded-top($imageWidths, 2); }
+    li.occasions	{ @include rounded-top($imageWidths, 3); }
+    li.prices  		{ @include rounded-top($imageWidths, 4); }
+    li.music  		{ @include rounded-top($imageWidths, 5); }
+    li.contact  	{ @include rounded-top($imageWidths, 6); }
+}

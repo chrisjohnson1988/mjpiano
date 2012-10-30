@@ -1,0 +1,10 @@
+<#import "_freemarker/template.ftl" as template>
+
+<#assign title="Prices"/>
+<#assign css="prices"/>
+<#assign content><@markdown file="_markdown/prices.htm.markdown"/></#assign>
+<#assign href="prices.htm"/>
+
+<@template.page href=href css=css title=title>
+	${content}
+</@template.page>

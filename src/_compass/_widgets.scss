@@ -1,0 +1,54 @@
+/*Define CSS for imageChanger widget*/
+.ui-imageChanger {
+	position: relative;
+	overflow:hidden;
+	
+	img, .ui-imageChanger-loading {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.ui-imageChanger-loading {
+		position: absolute;
+		top:0;
+		left:0;
+		opacity: 0.3;
+		background: black center no-repeat image-url('ajax-loader.gif');
+	}
+}
+
+/*Define CSS for message box*/
+.ui-messageBox-warning { color: red; }
+
+/*Youtube Music Player*/
+.ui-youtubeMusicPlayerWidget {
+	width: 200px;
+	font-size: 62.5%;
+	background-image: image-url('youtube.gif');
+	background-position: 98% 50%;
+	background-repeat: no-repeat;
+	
+	.ui-youtubeMusicPlayerWidget-youtube-hidden {
+		height: 0;
+		overflow: hidden;
+	}
+	
+	.ui-youtubeMusicPlayerWidget-nowPlaying {
+		height: 10px;
+		display: inline-block;
+		padding: 2px 5px;
+		width: 80px;
+		overflow: hidden;
+	}
+	
+	.ui-button, .ui-youtubeMusicPlayerWidget-nowPlaying {
+		margin: 3px;
+		vertical-align: middle;
+	}
+}
+
+/*Marquee*/
+.ui-marquee-content {
+	position: relative;
+	white-space: nowrap;
+}
