@@ -30,6 +30,7 @@
 
 	&, .section {
 		width: 100%;
+		min-width: $contentWidth;
 		max-width: $backgroundImageWidth - ($backgroundImageWidth - $contentWidth) / 4; /*width of background images - (width of background images - width of section)/4)*/
 		height: $backgroundImageHeight;
 	}
