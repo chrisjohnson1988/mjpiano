@@ -4,18 +4,15 @@
 	$headerHeight: 200px;
 	$contentWidth: 960px;
 
-
-	#header, .section .content {
-		width: $contentWidth;	/*define drawable region*/
-		margin: 0 auto;
-	}
-
 	#header {
+		width: $contentWidth;	
 		z-index: 1;
 		position: relative;
 		height: $headerHeight;
 		margin-top: 30px;
 	}
+	
+	#header, .section .content { margin: 0 auto; } /* Centre the header and the context */
 
 	#logo {
 		width: 302px;
@@ -44,10 +41,12 @@
 		padding-left: ($backgroundImageWidth - $contentWidth) / 4; /*(width of background images - width of section)/4)*/
 		
 		.content {
+			$leftRightPadding : 20px;
 			position: relative;
 			top: $headerHeight;
 			margin-bottom: 75px; /*margin to match the body and shift up for the logo*/
-			padding: 0 20px;
+			padding: 0 $leftRightPadding;
+			width: $contentWidth - 2*$leftRightPadding; 	/*define drawable region*/
 			height: $backgroundImageHeight - $headerHeight; /*section - header*/
 			
 			/*Define the decoration image which can exist in a section*/
