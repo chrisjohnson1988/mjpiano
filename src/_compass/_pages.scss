@@ -36,6 +36,7 @@
 	/*MUSIC PAGE defined styles*/
 	.music {
 		.youtube-music {
+			float: left;
 			li a {
 				display: inline-block;
 				background: image-url('Play Button.png') no-repeat;
@@ -48,17 +49,23 @@
 		}
 		
 		.youtube-video {
-			a {
+			float: right;
+			width: 500px;
+			li {
 				display: inline-block;
-				text-decoration:none;
-				padding: 4px;
-				.youtube-image-wrapper {
-					display: inline-block;
-					overflow: hidden;
-					height : 66px;
-					img { margin-top: -12px; }
+				margin-left: 4em;
+				a {
+					text-decoration:none;
+					padding: 4px;
+					.youtube-image-wrapper {
+						display: inline-block;
+						overflow: hidden;
+						height : 66px;
+						img { margin-top: -12px; }
+					}
+					.youtube-title:hover { text-decoration:underline; }
+					&:hover { opacity: 0.4; }
 				}
-				.youtube-title:hover { text-decoration:underline; }
 			}
 		}
 	}

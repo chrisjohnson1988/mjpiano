@@ -8,7 +8,8 @@
 		<h1>Music</h1>
 		<p>Here are some of Mark's own compositions and renditions.</p>
 	</div>
-	<@youtube.musicPlaylist playlistID="PL665BA9936F4006E8"/>
+	<@youtube.musicPlaylist playlistID="PL665BA9936F4006E8"/>	
+	<@youtube.videoPlaylist playlistID="PLgxYPsFIdAEYe7FngfqTi7w5fAfu4oxYD"/>
 </#assign>
 <#assign href="music.htm"/>
 
