@@ -24,7 +24,7 @@
 
 nav {
   @include clearfix;
-  background: image-url('music score.png') repeat;
+  background: inline-image('music score.png') repeat;
   width: 100%;  
   $logo-width: 302px;
 
