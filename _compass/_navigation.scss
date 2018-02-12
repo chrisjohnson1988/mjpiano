@@ -1,0 +1,85 @@
+@import "compass/utilities/general/clearfix";
+
+@function addListTo($list, $imageNum) {
+  $position: 0px;
+  @for $i from 1 through $imageNum {
+    $position: $position + nth($list, $i);
+  }
+  @return $position - nth($list, $imageNum);
+}
+
+@mixin toggle-icon($section) {
+  body[data-selected=#{map-get($section, 'id')}] nav .#{map-get($section, 'css')} {
+    .selected { display: block; }
+    .hover, .image { display: none; }
+  }
+}
+
+@mixin nav-image($list, $imageNum) {
+  width:nth($list, $imageNum);
+  .hover    { background-position: - addListTo($list, $imageNum) 0px;  }
+  .image    { background-position: - addListTo($list, $imageNum) 25px; }
+  .selected	{ background-position: - addListTo($list, $imageNum) 50px; }
+}
+
+nav {
+  @include clearfix;
+  background: image-url('music score.png') repeat;
+  width: 100%;  
+  $logo-width: 302px;
+
+  .logo {
+    width: $logo-width;
+    background: inline-image('logo.png') no-repeat;
+    margin: 0 auto;
+  }
+
+  .logo, ul { height: 125px; }
+
+  ul { display: none; }
+
+  @media only screen and (min-width: $full-screen-width) {
+    width: $full-screen-width;
+    .logo {
+      float: left;
+    }
+
+    ul {
+      display: block;
+      float: left;
+      width: $full-screen-width - $logo-width;
+
+      li {
+        float: left;
+        position :relative;
+        height:25px;
+        margin-right: 20px;
+        margin-top: 64px;
+
+        span {
+          position: absolute;
+          top:    0;
+          left:   0;
+          height: 100%;
+          width:  100%;
+          background-image: inline-image('navigation.png');
+          transition: opacity 1s;
+          text-indent: -9999px; /*Hide the original text*/
+        }
+
+        a {
+          &:hover .hover         { opacity: 1; }
+          &:hover .image, .hover { opacity: 0; }
+          .selected { display: none; }
+        }
+      }
+        
+      $imageWidths: 99px 63px 132px 49px 49px 111px;
+      @each $i, $section in $sections {
+        li.#{map-get($section, 'css')} { @include nav-image($imageWidths, $i); }
+      }
+    }
+  }
+}
+
+@each $i, $section in $sections { @include toggle-icon($section) }

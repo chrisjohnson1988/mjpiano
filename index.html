@@ -1,0 +1,26 @@
+---
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Wedding Pianist and Tutor Stockport - Mark Johnson</title>
+    <meta name="google-site-verification" content="bIrOkZOGmbNTUHezFH2f7LfwocV4jWvoyKmaCvK06Fo" />
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="application/javascript" src="js/main.js"></script>
+    <link href="css/mjpiano.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body data-selected="About-Me">
+    <script>updateSelected();</script>
+    {% include background.html %}
+    {% include navigation.html %}
+    {% for page in site.sections %}
+      <section id="{{page.navId}}" class="{{page.css}}">{{page}}</section>
+    {% endfor %}
+    <div id="social">
+      {% include social.html %}
+    </div>
+    <div id="copyright">Website created by <a href="http://chrisjohnson1988.github.io">Christopher Johnson</a>. Images By Sean Mitchell</div>
+  </body>
+</html>

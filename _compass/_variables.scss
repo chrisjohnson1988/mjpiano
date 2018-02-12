@@ -1,0 +1,11 @@
+$full-screen-width: 960px;
+$content-padding: 20px;
+
+$sections: ( 
+  1: ( id: 'About-Me',  css: 'aboutme'),
+  2: ( id: 'Tuition',   css: 'tuition'),
+  3: ( id: 'Occasions', css: 'occasions'),
+  4: ( id: 'Prices',    css: 'prices'),
+  5: ( id: 'Music',     css: 'music'),
+  6: ( id: 'Contact',   css: 'contact')
+);

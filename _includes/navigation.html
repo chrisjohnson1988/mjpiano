@@ -1,0 +1,12 @@
+<nav>
+  <div class="logo"></div>
+  <ul>
+    {% for p in site.sections %}
+      <li class="{{p.css}}"><a href="#{{p.navId}}">
+        <span class="selected">{{p.navTitle}}</span>
+        <span class="image">{{p.navTitle}}</span>
+        <span class="hover"></span>
+      </a></li>
+    {% endfor %}
+  </ul>
+</nav>

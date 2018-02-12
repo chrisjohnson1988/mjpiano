@@ -1,0 +1,33 @@
+$iconHeight: 20px;
+$iconWidth: 20px;
+
+@mixin social-icon($imageNum) {
+  background-position: #{- $imageNum * $iconHeight} 0px;
+  &:hover { background-position: #{- $imageNum * $iconHeight} #{- $iconHeight}; };
+}
+
+#social {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 3px;
+  
+  .fb-like,  a {
+    display:inline-block;
+    vertical-align: middle;
+  }
+  
+  .social-icon {
+    height:20px;
+    width:20px;
+    display: inline-block;
+    background-image: image-url('socialicons.png');
+  }
+  
+  .email      { @include social-icon(0); }
+  .facebook   { @include social-icon(1); }
+  .linkedin   { @include social-icon(2); }
+  .twitter    { @include social-icon(3); }
+  .youtube    { @include social-icon(4); }
+  .googleplus { @include social-icon(5); }
+}
