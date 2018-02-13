@@ -1,6 +1,6 @@
 # MJPiano
 
-This is the software repository for the personal website of [Mark Johnson](www.mjpiano.co.uk).  It is built using [Jekyll](https://jekyllrb.com/)
+This is the software repository for the personal website of [Mark Johnson](http://www.mjpiano.co.uk).  It is built using [Jekyll](https://jekyllrb.com/)
 
 The stylesheets are prebuild using compass and committed in to this repository.
 
