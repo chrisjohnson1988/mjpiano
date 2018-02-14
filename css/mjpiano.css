@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 1s ease-in, opacity 1s ease-in;
+  transition: visibility 1s ease-out, opacity 1s ease-out;
 }
 /* line 30, ../_compass/_backgrounds.scss */
 .background, .background * {
@@ -176,7 +176,7 @@ section {
     width: 920px;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 1s ease-in, opacity 1s ease-in;
+    transition: visibility 1s ease-out, opacity 1s ease-out;
   }
 }
 
